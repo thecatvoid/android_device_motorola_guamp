@@ -390,3 +390,4 @@ ro.treble.enabled=true
 net.bt.name=Android
 ro.vendor.qti.va_aosp.support=1
 
+system/etc/prop.default
