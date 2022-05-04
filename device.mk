@@ -11,14 +11,24 @@ BOARD_BUILD_VENDOR_IMAGE := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
-# OTA
+# A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS := \
-  boot \
-  system \
-  vendor \
-  product
 
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    product \
+    recovery \
+    system \
+    vendor \
+    vbmeta \
+    vbmeta_system
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := guamp
