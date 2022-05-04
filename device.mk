@@ -24,7 +24,7 @@ AB_OTA_PARTITIONS := \
 TARGET_OTA_ASSERT_DEVICE := guamp
 
 # SOONG Namespaces
-PRODUCT_SOONG_NAMESPACES=device/motorola/guamp kernel/motorola/guamp hardware/qcom-caf/bootctrl hardware/google/pixel
+PRODUCT_SOONG_NAMESPACES=device/motorola/guamp kernel/motorola/guamp hardware/qcom-caf/bootctrl
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
